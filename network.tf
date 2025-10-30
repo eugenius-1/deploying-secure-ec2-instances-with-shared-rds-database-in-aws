@@ -73,19 +73,19 @@ resource "aws_security_group" "WebTrafficSG" {
 }
 
 resource "aws_network_interface" "nw-interface1" {
-  subnet_id = aws_subnet.AppSubnet1.id
+  subnet_id       = aws_subnet.AppSubnet1.id
   security_groups = [aws_security_group.WebTrafficSG.id]
   tags = {
-    Name        = "nw-interface1"
-  }  
+    Name = "nw-interface1"
+  }
 }
 
 resource "aws_network_interface" "nw-interface2" {
-  subnet_id = aws_subnet.AppSubnet2.id
+  subnet_id       = aws_subnet.AppSubnet2.id
   security_groups = [aws_security_group.WebTrafficSG.id]
   tags = {
-    Name        = "nw-interface2"
-  }  
+    Name = "nw-interface2"
+  }
 }
 
 resource "aws_internet_gateway" "AppIGW" {
@@ -124,11 +124,11 @@ resource "aws_route_table_association" "AppSubnet2_association" {
 }
 
 resource "aws_eip" "public_ip1" {
-  domain = "vpc"
+  domain            = "vpc"
   network_interface = aws_network_interface.nw-interface1.id
 }
 
 resource "aws_eip" "public_ip2" {
-  domain = "vpc"
+  domain            = "vpc"
   network_interface = aws_network_interface.nw-interface2.id
 }

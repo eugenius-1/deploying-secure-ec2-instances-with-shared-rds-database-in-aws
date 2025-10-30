@@ -12,7 +12,7 @@ data "aws_ami" "ubuntu" {
   }
 
   filter {
-    name = "architecture"
+    name   = "architecture"
     values = ["x86_64"]
   }
 
@@ -20,8 +20,8 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "WebServer1" {
-  ami             = data.aws_ami.ubuntu.id
-  instance_type   = "t2.micro"
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
 
   primary_network_interface {
     network_interface_id = aws_network_interface.nw-interface1.id
@@ -43,8 +43,8 @@ resource "aws_instance" "WebServer1" {
 }
 
 resource "aws_instance" "WebServer2" {
-  ami             = data.aws_ami.ubuntu.id
-  instance_type   = "t2.micro"
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
 
   primary_network_interface {
     network_interface_id = aws_network_interface.nw-interface2.id
