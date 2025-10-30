@@ -1,0 +1,6 @@
+important_commands.txt
+provider.tf
+my-ec2-key.pem
+*.tfstate
+*.tfstate.backup
+.terraform/
