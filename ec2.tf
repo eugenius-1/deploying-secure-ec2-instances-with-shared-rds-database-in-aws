@@ -29,13 +29,7 @@ resource "aws_instance" "WebServer1" {
 
   key_name = "my-ec2-key"
 
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo apt update -y
-              sudo apt install mysql-server -y
-              sudo systemctl start mysql
-              sudo systemctl enable mysql
-              EOF
+  user_data = file("install-mysql.sh")
 
   tags = {
     Name = "WebServer1"
@@ -52,13 +46,7 @@ resource "aws_instance" "WebServer2" {
 
   key_name = "my-ec2-key"
 
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo apt update -y
-              sudo apt install mysql-server -y
-              sudo systemctl start mysql
-              sudo systemctl enable mysql
-              EOF
+  user_data = file("install-mysql.sh")
 
   tags = {
     Name = "WebServer2"
