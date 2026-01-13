@@ -20,28 +20,9 @@ This project is a practical, real-world implementation and extension of a simila
 
 The following diagram illustrates the high-level architecture deployed by this Terraform configuration:
 
-```mermaid
-graph TD
-    A[Internet Gateway] --> B(Public Subnet - N. Virginia)
-    B --> C(Application Load Balancer)
-    C --> D[EC2 Instance 1 (Web/App Server)]
-    C --> E[EC2 Instance 2 (Web/App Server)]
-    D --> F(Private Subnet - N. Virginia)
-    E --> F
-    F --> G(RDS Database Instance)
-    subgraph VPC
-        subgraph Availability Zone 1
-            B
-            D
-        end
-        subgraph Availability Zone 2
-            E
-            F
-        end
-    end
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#bbf,stroke:#333,stroke-width:2px
-```
+<div align="center">
+  <img src="sec_ec2_rds.png" alt="architectural_diagram"/>
+</div>
 
 **Description:**
 
