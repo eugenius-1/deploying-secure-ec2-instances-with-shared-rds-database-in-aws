@@ -21,7 +21,7 @@ This project is a practical, real-world implementation and extension of a simila
 The following diagram illustrates the high-level architecture deployed by this Terraform configuration:
 
 <div align="center">
-  <img src="sec_ec2_rds.png" alt="architectural_diagram"/>
+  <img src="ec2_rds_diag1.png" alt="architectural_diagram"/>
 </div>
 
 **Description:**
